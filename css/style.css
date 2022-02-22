@@ -32,7 +32,7 @@ body.the-dark .nav-link {
   color: white;
 }
 body.the-dark .shadow {
-  box-shadow: 5px 2px 10px #514c63 !important;
+  box-shadow: 5px 2px 10px #171030 !important;
 }
 body.the-dark .font-title {
   color: white;
@@ -40,7 +40,7 @@ body.the-dark .font-title {
 body.the-dark .social a {
   color: #aea1ff !important;
 }
-body.the-dark .home .row > div:nth-of-type(2) a {
+body.the-dark .home .row > div:nth-of-type(2) a:first-of-type {
   color: var(--textcolordark);
   background-color: #8e7af34f;
 }
@@ -412,6 +412,22 @@ header.shadow {
 /* -----------------------------end header */
 /* -----------------------------start main */
 /* -----------------------------start home */
+/* 
+.outerback {
+  background: linear-gradient(125deg, #b6dee048, #9213b85e);
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 650px;
+  z-index: -5;
+  padding-top: 10px;
+  clip-path: ellipse(100% 100% at 50% 0%);
+} */
+.home {
+  z-index: 11;
+}
 .home > i {
   position: absolute;
   bottom: 0;
@@ -459,7 +475,7 @@ header.shadow {
   transition: all 0.4s linear;
 }
 
-.home .row > div:nth-of-type(2) a {
+.home .row > div:nth-of-type(2) a:last-of-type {
   color: var(--maincolor);
   display: block !important;
   width: 130px;
@@ -667,7 +683,6 @@ header.shadow {
   position: relative;
   padding-bottom: 10px;
   justify-content: center;
-  box-shadow: 2px 2px 10px grey;
 }
 .skills .all-skills > .row .col .card img {
   width: 17%;
@@ -729,11 +744,18 @@ header.shadow {
   font-weight: 700;
   margin-left: 5px;
 }
-.skills .all-skills > p {
+.skills .all-skills > p,
+.web-title {
   font-weight: 700;
   color: var(--titlecolor);
   width: 300px;
-  font-size: 22px;
+  font-size: 25px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+.skills .all-skills > p span,
+.web-title span {
+  color: #6e57e0;
 }
 .skills .all-skills > p i:last-of-type {
   animation: move 1s ease-in-out alternate infinite;
@@ -744,50 +766,29 @@ header.shadow {
 /* -----------------------------start portfolio */
 
 .my-card {
-  width: 70%;
+  width: 100%;
   margin: 10px;
-  margin-left: 15% !important;
-  height: 500px;
+  margin-left: 0% !important;
+  height: 300px;
   background-color: #f5f5f5;
   position: relative;
   overflow: hidden;
   border: 1px solid white;
-  margin-left: 5%;
   border-radius: 20px;
   border-left: 6px solid #f5f5f5;
   border-right: 6px solid #f5f5f5;
   border-bottom: 5px solid #f5f5f5;
   box-sizing: border-box;
-  box-shadow: 2px 2px 10px grey;
-}
-
-.my-card .outer {
-  position: absolute;
-  top: 0;
-  transition: all 0.5s linear;
-  font-weight: 500;
-  right: 0px;
-  border-bottom-left-radius: 20px;
-  width: 50px;
-  padding-top: 6px;
-  font-size: 10px;
-  text-align: center;
-  border: 2px solid #f5f5f5;
-  height: 50px;
-  color: white;
-  z-index: 3;
-  background-color: #6e57e0;
 }
 
 .my-card .outer2 {
   position: absolute;
-  top: 50%;
+  bottom: -100%;
   transition: all 0.5s linear;
   font-weight: 500;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0);
+  left: 0%;
   border-radius: 0px;
-  width: 150px;
+  width: 100%;
   padding-top: 6px;
   font-size: 16px;
   text-align: center;
@@ -803,10 +804,9 @@ header.shadow {
   height: 100%;
 }
 .my-card:hover .outer2 {
-  transform: translate(-50%, -50%) scale(1);
+  bottom: 0;
 }
 .my-card .outer2:hover {
-  border-color: #6e57e0;
   background-color: white;
 }
 .my-card .outer2:hover a {
@@ -839,17 +839,7 @@ header.shadow {
   top: 33px;
   left: 0px;
 }
-.my-card .tefst-1,
-.my-card .tefst-2,
-.my-card .tefst-3 {
-  height: 2700px !important;
-  transition: all 5s linear;
-}
-.my-card .tefst-8 {
-  height: 100% !important;
-  top: 13px;
-  transition: all 3s linear;
-}
+
 .my-card .sec {
   width: 100%;
   position: absolute;
@@ -857,11 +847,7 @@ header.shadow {
   left: 0px;
   transition: all 4s ease-in-out;
 }
-.web .my-card:hover .tefst-1,
-.web .my-card:hover .tefst-2,
-.web .my-card:hover .tefst-3 {
-  top: -2200px !important;
-}
+
 .portfolio .web-name {
   font-family: "Encode Sans SC", sans-serif;
   font-size: 17px;
@@ -874,7 +860,11 @@ header.shadow {
 .portfolio .web {
   cursor: pointer;
   transition: all 0.5s linear;
-  margin-bottom: 50px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+.portfolio .vueproject .my-card {
+  height: 300px;
 }
 .portfolio .web:hover {
   transform: scale(1.06);
@@ -980,16 +970,18 @@ header.shadow {
 /* -----------------------------end main*/
 /* ---------------------------------start footer */
 .myfooter {
+  height: 100px;
   background-color: var(--maincolor);
   color: white;
   text-align: center;
   overflow: hidden;
   z-index: -1111;
-  padding: 10px 0 20px 0;
+  padding: 10px 0 10px 0;
 }
 .myfooter h1 {
   font-family: "Lobster", cursive;
   margin-bottom: 0;
+  margin-top: 0;
   animation: letter 1s linear alternate infinite;
 }
 .myfooter p {
